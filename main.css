@@ -216,7 +216,7 @@ h2 {
 }
 
 h2 + h3 {
-	padding-top: 4px;
+	padding-top: 400px;
 }
 
 h3 {
@@ -429,7 +429,7 @@ div#toptitle h1, #layout-content div#toptitle h1 {
 
 img {
 	padding: 0px;
-	margin-right: 20px;
+	margin-right: 55px;
 	margin-bottom: 10px;
 	border-radius: 10px;
 }
