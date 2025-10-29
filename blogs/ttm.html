@@ -32,9 +32,11 @@ id="test-time-matching-unlocking-compositional-reasoning-in-multimodal-models">T
 Matching:<br>Unlocking Compositional Reasoning<br>in Multimodal
 Models</h1>
 <p style="text-align: center; margin: 1.5em 0;">
-<span style="color: var(--fg);">Yinglun Zhu, Jiancheng Zhang, Fuzhi
-Tang<br> University of California, Riverside<br></span> <span
-style="color: #666;">October 28, 2025 • 8 min read</span><br>
+<span
+style="color: var(--fg);"><a href="https://yinglunz.com/" target="_blank" style="color: inherit; text-decoration: none;">Yinglun
+Zhu</a>, Jiancheng Zhang, Fuzhi Tang<br> University of California,
+Riverside<br></span> <span style="color: #666;">October 28, 2025 • 8 min
+read</span><br>
 <a href="https://arxiv.org/pdf/2510.07632" target="_blank">Paper</a> |
 <a href="https://github.com/yinglunz/test-time-matching" target="_blank">Code</a><br>
 <span
@@ -89,7 +91,7 @@ results in a score of 0. Suppose the ground-truth pairings are <span
 class="math inline">\(\{(I_i, C_i)\}_{i=1}^k\)</span>. Let <span
 class="math inline">\(s \in {\mathbb R}^{k \times k}\)</span> denote the
 similarity matrix where <span class="math inline">\(s_{ij} := s(I_i,
-C_j)\)</span> denotes the similarity score between image <span
+C_j)\)</span> represents the similarity score between image <span
 class="math inline">\(I_i\)</span> and caption <span
 class="math inline">\(C_j\)</span>. The GroupScore is then computed
 through separate row-wise and column-wise checks: <img
@@ -104,7 +106,7 @@ class="math inline">\(k!\)</span> possible bijective matchings <span
 class="math inline">\(\pi\)</span> and selects the most likely one. Let
 <span class="math inline">\(\pi^\star: i \mapsto i\)</span> denote the
 ground-truth matching. The GroupMatch score is defined as: <img
-src="figs/ttm/eq2.png" /> The GroupMatch score <em>increases</em> the
+src="figs/ttm/eq2.png" /> The GroupMatch metric <em>increases</em> the
 random-guess success probability to <span
 class="math inline">\(\frac{1}{k!}\)</span> (for <span
 class="math inline">\(2\times2\)</span> groups, from 1/6 to 1/2).</p>
@@ -117,8 +119,8 @@ two-step <strong>SimpleMatch</strong> procedure:</p>
 <li>Select the most likely matching using GroupMatch.</li>
 <li>Overfit to that matching at test time.</li>
 </ul>
-<p>As shown in Fig. 1 above, this simple procedure reveals substantial
-hidden capability: it enables
+<p>As shown in Fig. 1 above, SimpleMatch reveals substantial hidden
+capability: it enables
 <a href="https://arxiv.org/pdf/2303.15343" target="_blank">SigLIP-B16</a>
 to surpass all previous results and <strong>GPT-4.1 to yield the first
 result surpassing human performance on Winoground.</strong><a
@@ -190,13 +192,14 @@ performance, achieving up to 33.3% relative error reduction.</p>
 <h2 id="discussion">Discussion</h2>
 <p>We revisit the long-standing puzzle of compositional reasoning,
 showing that much of the apparent failure of multimodal models arises
-from overly rigid evaluation metrics. Our proposed
-<strong>GroupMatch</strong> metric and <strong>Test-Time Matching
-(TTM)</strong> algorithm reveal that substantial compositional reasoning
-capability already exists within current models—it simply needs to be
-unlocked at test time. Experiments across 16 dataset variants spanning
-diverse setups demonstrate the robustness and effectiveness of TTM. For
-more details, please check out our
+from overly rigid evaluation metrics that systematically underestimate
+model capability. Our proposed <strong>GroupMatch</strong> metric and
+<strong>Test-Time Matching (TTM)</strong> algorithm reveal that
+substantial compositional reasoning capability already exists within
+current models—it simply needs to be unlocked at test time with the
+right methods. Experiments across 16 dataset variants spanning diverse
+setups demonstrate the robustness and effectiveness of TTM. For more
+details, please see our
 <a href="https://arxiv.org/pdf/2510.07632" target="_blank">paper</a>.</p>
 <p>Moving forward, we highlight two promising directions:</p>
 <ul>
